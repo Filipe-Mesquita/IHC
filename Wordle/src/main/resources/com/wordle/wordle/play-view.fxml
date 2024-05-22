@@ -21,22 +21,23 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: white;" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="308.0" />
-               </GridPane.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="510.0" />
-               </GridPane.margin>
-            </Button>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
                   <Button mnemonicParsing="false" text="Button" />
+                  <Label alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: white;" text="Label" />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="18.0" prefWidth="46.0" text="Language" textFill="WHITE" />
+                  <Button mnemonicParsing="false" text="Button">
+                     <FlowPane.margin>
+                        <Insets left="270.0" />
+                     </FlowPane.margin></Button>
                   <Label alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" prefHeight="18.0" prefWidth="869.0" style="-fx-background-color: white;" text="Label" />
                   <Button mnemonicParsing="false" text="Button" />
                </children></FlowPane>
