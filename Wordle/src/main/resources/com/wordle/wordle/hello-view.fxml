@@ -24,7 +24,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 12;" text="PLAY" textFill="#e8e400" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="play" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#playFunc" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 12;" text="PLAY" textFill="#e8e400" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
