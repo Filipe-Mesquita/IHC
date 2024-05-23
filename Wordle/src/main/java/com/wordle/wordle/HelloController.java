@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -23,6 +24,16 @@ public class   HelloController implements Initializable {
     private Button ranking;
     @FXML
     private Button exit;
+    @FXML
+    private TextField User;
+    private Button botao;
+    @FXML
+    private Button botao2;
+    @FXML
+    private Label valueLabel;
+
+    private String[] values = {"Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"};
+    private int currentIndex = 0;
 
     @FXML public void exitFunc (ActionEvent actionEvent)
     {
@@ -48,6 +59,33 @@ public class   HelloController implements Initializable {
         }
     }
 
+    @FXML
+    public void handleBotao(ActionEvent actionEvent) {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateLabel();
+        }
+    }
+
+    @FXML
+    public void handleBotao2(ActionEvent actionEvent) {
+        if (currentIndex < values.length - 1) {
+            currentIndex++;
+            updateLabel();
+        }
+    }
+
+    private void updateLabel() {
+        valueLabel.setText(values[currentIndex]);
+    }
+
+
+
+
+
+
     @Override
-    public void initialize(URL url, ResourceBundle rb){}
+    public void initialize(URL url, ResourceBundle rb){
+
+    }
 }
