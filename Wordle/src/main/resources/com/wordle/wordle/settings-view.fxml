@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="870.0" style="-fx-background-color: rgb(50, 50, 50);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordle.wordle.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: rgb(50, 50, 50);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordle.wordle.HelloController">
    <top>
       <Label text="Settings" textFill="#55945d" BorderPane.alignment="CENTER">
          <font>
@@ -24,56 +24,56 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" minWidth="150.0" prefWidth="206.0" text="Difficulty " textFill="#e8e400">
                      <font>
                         <Font name="Arial Black" size="35.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" style="-fx-background-color: rgb(50, 50, 50);" text="&lt;" textFill="#e8e400">
+                  <Button mnemonicParsing="false" onAction="#handleBotaoD" style="-fx-background-color: rgb(50, 50, 50);" text="&lt;" textFill="#e8e400">
                      <FlowPane.margin>
                         <Insets left="100.0" />
                      </FlowPane.margin>
                      <font>
                         <Font size="25.0" />
                      </font></Button>
-                  <Label fx:id="value1" alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: #55945d; -fx-background-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10;" text="Label" textFill="#e8e400">
+                  <Label fx:id="labelDifficulty" alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: #55945d; -fx-background-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10;" text="1" textFill="#e8e400">
                      <FlowPane.margin>
                         <Insets />
                      </FlowPane.margin>
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Label>
-                  <Button mnemonicParsing="false" style="-fx-background-color: rgb(50, 50, 50);" text="&gt;" textFill="#e8e400">
+                  <Button mnemonicParsing="false" onAction="#handleBotaoD2" style="-fx-background-color: rgb(50, 50, 50);" text="&gt;" textFill="#e8e400">
                      <font>
                         <Font size="25.0" />
                      </font></Button>
                </children>
             </FlowPane>
-            <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" minWidth="150.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="66.0" prefWidth="206.0" text="Language" textFill="#e8e400">
                      <font>
                         <Font name="Arial Black" size="35.0" />
                      </font></Label>
-                  <Button fx:id="botao" mnemonicParsing="false" onAction="#handleBotao" style="-fx-background-color: rgb(50, 50, 50);" text="&lt;" textFill="#e8e400">
+                  <Button fx:id="botao" mnemonicParsing="false" onAction="#handleBotaoL" style="-fx-background-color: rgb(50, 50, 50);" text="&lt;" textFill="#e8e400">
                      <FlowPane.margin>
                         <Insets left="100.0" />
                      </FlowPane.margin>
                      <font>
                         <Font size="25.0" />
                      </font></Button>
-                  <Label fx:id="valueLabel" alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" prefHeight="18.0" prefWidth="869.0" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 10;" text="Label" textFill="#e8e400">
+                  <Label fx:id="labelLanguage" alignment="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" prefHeight="18.0" prefWidth="869.0" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 10;" text="English" textFill="#e8e400">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Label>
-                  <Button minHeight="50.0" mnemonicParsing="false" style="-fx-background-color: rgb(50, 50, 50);" text="&gt;" textFill="#e8e400">
+                  <Button minHeight="50.0" mnemonicParsing="false" onAction="#handleBotaoL2" style="-fx-background-color: rgb(50, 50, 50);" text="&gt;" textFill="#e8e400">
                      <font>
                         <Font size="25.0" />
                      </font></Button>
                </children></FlowPane>
-            <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Username" textAlignment="CENTER" textFill="#e8e400">
                      <font>
@@ -88,20 +88,23 @@
                         <Insets left="155.0" />
                      </FlowPane.margin>
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Arial Black" size="20.0" />
                      </font>
                   </TextField>
-               </children></FlowPane>
+               </children>
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin></FlowPane>
             <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #55945d; -fx-border-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-background-radius: 10;" text="Back" textFill="#e8e400">
+                  <Button fx:id="back" minWidth="100.0" mnemonicParsing="false" onAction="#backFunc" style="-fx-background-color: #55945d; -fx-border-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-background-radius: 10;" text="Back" textFill="#e8e400">
                      <FlowPane.margin>
                         <Insets />
                      </FlowPane.margin>
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font></Button>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #55945d; -fx-border-color: #e8e400; -fx-border-width: 2px; -fx-border-radius: 10; -fx-background-radius: 10;" text="Play" textFill="#e8e400">
+                  <Button minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #55945d; -fx-border-color: #e8e400; -fx-border-width: 2px; -fx-border-radius: 10; -fx-background-radius: 10;" text="Play" textFill="#e8e400">
                      <FlowPane.margin>
                         <Insets left="50.0" />
                      </FlowPane.margin>

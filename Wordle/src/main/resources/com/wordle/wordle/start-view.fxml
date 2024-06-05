@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="870.0" style="-fx-background-color: rgb(50, 50, 50);" stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordle.wordle.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: rgb(50, 50, 50);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordle.wordle.HelloController">
    <top>
       <Label fx:id="title" styleClass="#title" text="WORDLE" textFill="#55945d" BorderPane.alignment="CENTER">
          <font>
@@ -24,7 +24,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="play" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#playFunc" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 12;" text="PLAY" textFill="#e8e400" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="start" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#startFunc" style="-fx-background-color: #55945d; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10; -fx-background-radius: 12;" text="START" textFill="#e8e400" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
