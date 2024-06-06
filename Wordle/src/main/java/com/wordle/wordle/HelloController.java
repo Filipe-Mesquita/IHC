@@ -19,9 +19,14 @@ public class   HelloController implements Initializable {
     @FXML
     private Label title;
     @FXML
+    private Label madeBy;
+    @FXML
     private Button start;
     @FXML
     private Button back;
+
+    @FXML
+    private Button play;
     @FXML
     private Button ranking;
     @FXML
@@ -81,6 +86,26 @@ public class   HelloController implements Initializable {
             e.printStackTrace();
         }
     }
+//Troca de views (settings->game)
+    @FXML
+    public void playFunc() {
+        try {
+            // Load the second view from the FXML file
+            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("game-view.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) play.getScene().getWindow();
+
+            // Set the new scene
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 //Controle de Linguagem
     @FXML
     public void handleBotaoL(ActionEvent actionEvent) {
