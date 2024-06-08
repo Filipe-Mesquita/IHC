@@ -1,5 +1,4 @@
 package com.wordle.wordle;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +13,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Wordle");
         stage.setScene(scene);
-
         stage.show();
 
     }

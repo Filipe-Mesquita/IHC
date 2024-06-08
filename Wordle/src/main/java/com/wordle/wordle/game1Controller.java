@@ -1,0 +1,60 @@
+package com.wordle.wordle;
+import javafx.fxml.Initializable;
+import java.io.FileReader;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.ResourceBundle;
+import java.io.BufferedReader;
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import java.util.List;
+
+public class game1Controller implements Initializable {
+
+    @FXML
+    private Label wordLabel;
+
+    @FXML
+    public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("Inicializando controlador.");
+        String filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+        String threeLetterWord = findRandomLetterWord(filePath);
+        if (threeLetterWord != null) {
+            wordLabel.setText(threeLetterWord);
+            System.out.println(wordLabel);
+        } else {
+            wordLabel.setText("No word found");
+        }
+
+}
+
+
+
+    private String findRandomLetterWord(String filePath) {
+        List<String> threeLetterWords = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.length() == 3) {
+                    threeLetterWords.add(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (threeLetterWords.isEmpty()) {
+            return null;
+        }
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(threeLetterWords.size());
+        return threeLetterWords.get(randomIndex);
+    }
+}
+
+
+

@@ -11,11 +11,12 @@ import javafx.stage.Stage;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
+import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class   HelloController implements Initializable {
+public class HelloController implements Initializable {
     @FXML
     private Label title;
     @FXML
@@ -24,7 +25,6 @@ public class   HelloController implements Initializable {
     private Button start;
     @FXML
     private Button back;
-
     @FXML
     private Button play;
     @FXML
@@ -37,130 +37,132 @@ public class   HelloController implements Initializable {
     private Label labelLanguage;
     @FXML
     private Label labelDifficulty;
+    @FXML
+    private GridPane dynamicGrid;  // Referência ao GridPane
 
-    private String[] values = {"English", "Portuguese", "French"};
-    private String[] difficulty = {"1", "2", "3", "4", "5"};
+    private final String[] values = {"English", "Portuguese", "French"};
+    private final String[] difficulty = {"1", "2", "3", "4", "5"};
     private int currentIndex = 0;
     private int currentIndex2 = 0;
 
-    @FXML public void exitFunc ()
-    {
+
+
+    @FXML public void exitFunc() {
+        System.out.println("Saindo do aplicativo."); // Debugging line
         Platform.exit();
     }
 
-//Troca de view (start->settings)
+
+    private void loadFXML(Button x,String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource(fxmlFile));
+            Parent root = loader.load();
+            Stage stage = (Stage) x.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void startFunc() {
-        try {
-            // Load the second view from the FXML file
-            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("settings-view.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage
-            Stage stage = (Stage) start.getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Ir pros settings "); // Debugging line
+        loadFXML(start,"Settings-view.fxml");
     }
-    //Troca de views (settings->start)
+
     @FXML
     public void backFunc() {
-        try {
-
-            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("start-view.fxml"));
-            Parent root = loader.load();
-
-
-            Stage stage = (Stage) back.getScene().getWindow();
-
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Voltando para o início."); // Debugging line
+        loadFXML(back,"start-view.fxml");
     }
-//Troca de views (settings->game)
+
     @FXML
     public void playFunc() {
-        try {
-            // Load the second view from the FXML file
-            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("game-view.fxml"));
-            Parent root = loader.load();
 
-            // Get the current stage
-            Stage stage = (Stage) play.getScene().getWindow();
+        if(currentIndex2 == 0){
 
-            // Set the new scene
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            loadFXML(play, "game1-view.fxml");
         }
+
+
+        if(currentIndex2 == 1){
+
+            loadFXML(play,"game2-view.fxml");
+        }
+
+        if(currentIndex2 == 2){
+
+            loadFXML(play,"game3-view.fxml");
+        }
+
+        if(currentIndex2 == 3){
+
+            loadFXML(play,"game4-view.fxml");
+        }
+
+        if(currentIndex2 == 4){
+
+            loadFXML(play,"game5-view.fxml");
+        }
+
+
+
     }
 
-//Controle de Linguagem
+
+
+
+
     @FXML
     public void handleBotaoL(ActionEvent actionEvent) {
-
-            currentIndex--;
-            if(currentIndex < 0) {
-             currentIndex= values.length-1;
-
-            }
-            updateLabel(labelLanguage);
-
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = values.length - 1;
+        }
+        System.out.println("Idioma selecionado: " + values[currentIndex]); // Debugging line
+        updateLabel(labelLanguage);
     }
 
     @FXML
     public void handleBotaoL2(ActionEvent actionEvent) {
-            currentIndex++;
-            if(currentIndex > values.length-1) {
-              currentIndex=0;
-            }
-            updateLabel(labelLanguage);
-
+        currentIndex++;
+        if (currentIndex > values.length - 1) {
+            currentIndex = 0;
+        }
+        System.out.println("Idioma selecionado: " + values[currentIndex]); // Debugging line
+        updateLabel(labelLanguage);
     }
-//Controle de dificuldade
+
     @FXML
     public void handleBotaoD(ActionEvent actionEvent) {
-
-            currentIndex2--;
-
-            if(currentIndex2 < 0) {
-            currentIndex2 = difficulty.length-1;
+        currentIndex2--;
+        if (currentIndex2 < 0) {
+            currentIndex2 = difficulty.length - 1;
         }
-
-
-            updateLabel(labelDifficulty);
-
+        System.out.println("Dificuldade selecionada: " + difficulty[currentIndex2]); // Debugging line
+        updateLabel(labelDifficulty);
+       // generateGrid(); // Adicionado para chamar a geração da grade quando a dificuldade é alterada
     }
+
     @FXML
     public void handleBotaoD2(ActionEvent actionEvent) {
-
-            currentIndex2++;
-
-
-        if(currentIndex2 > difficulty.length -1 ) {
+        currentIndex2++;
+        if (currentIndex2 > difficulty.length - 1) {
             currentIndex2 = 0;
         }
-            updateLabel(labelDifficulty);
-
+        System.out.println("Dificuldade selecionada: " + difficulty[currentIndex2]); // Debugging line
+        updateLabel(labelDifficulty);
+        //generateGrid(); // Adicionado para chamar a geração da grade quando a dificuldade é alterada
     }
-//Atualizar Labels de dificuldade e linguagem
-    private void updateLabel(Label x) {
-        if (x.equals(labelLanguage)){
-        x.setText(values[currentIndex]);
-        }
 
-        if (x.equals(labelDifficulty)) {
+
+
+
+    private void updateLabel(Label x) {
+        if (x.equals(labelLanguage)) {
+            x.setText(values[currentIndex]);
+        } else if (x.equals(labelDifficulty)) {
             x.setText(difficulty[currentIndex2]);
         }
     }
@@ -168,12 +170,9 @@ public class   HelloController implements Initializable {
 
 
 
-
-
-
-
     @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(URL url, ResourceBundle rb) {
 
+        // Inicialização se necessário
     }
 }
