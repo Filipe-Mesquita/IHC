@@ -48,7 +48,7 @@ public class HelloController implements Initializable {
     private int currentIndex2 = 0;
     private String username;
 
-    private Player[] ranks = new Player[10];
+    private Player[] ranks  = new Player[10];
 
     private Player newPLayer;
 
@@ -131,19 +131,23 @@ public class HelloController implements Initializable {
         username = User.getText();
         if (username.length() >= 3) {
 
-           /* int  n;
-            for(n = 0; n < ranks.length; n ++)
+            System.out.println("vai entrar no for");
+            int  n;
+            for(n = 1; n < ranks.length; n ++)
             {
                 if(ranks[n] == null)
                 {
                     break;
                 }
-            }*/
+            }
 
-            newPLayer = new  Player(username);
+            ranks[n] = new Player(username);
+
+            System.out.println(ranks[n].getUsername());
+            saveRanks();
 
 
-            System.out.println(newPLayer.getUsername());
+            System.out.println(ranks[n].getUsername());
 
             if (currentIndex2 == 0) {
                 loadGameFXML(play, "game1-view.fxml");
@@ -238,9 +242,11 @@ public class HelloController implements Initializable {
 
 
     private void saveRanks() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ranks.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
             for (Player player : ranks) {
-                writer.write("Username: " + player.getUsername() + ", Score: " + player.getScore());
+                if (player != null) {
+                    writer.write("Username: " + player.getUsername() + ", Score: " + player.getScore());
+                }
                 writer.newLine(); // Nova linha após cada jogador
             }
             System.out.println("Informações dos jogadores gravadas com sucesso no arquivo players.txt");
@@ -254,18 +260,21 @@ public class HelloController implements Initializable {
     {
         ArrayList<Player> playersList = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("players.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Processamento de cada linha
-                String[] parts = line.split(", ");
-                String username = parts[0].split(": ")[1];
-                int score = Integer.parseInt(parts[1].split(": ")[1]);
+                // Verifica se a linha está no formato esperado
+                if (line.startsWith("Username: ") && line.contains(", Score: ")) {
+                    // Processamento de cada linha
+                    String[] parts = line.split(", ");
+                    String username = parts[0].split(": ")[1];
+                    int score = Integer.parseInt(parts[1].split(": ")[1]);
 
-                // Criação de um novo objeto Player e adição à lista
-                Player player = new Player(username);
-                player.setScore(score);
-                playersList.add(player);
+                    // Criação de um novo objeto Player e adição à lista
+                    Player player = new Player(username);
+                    player.setScore(score);
+                    playersList.add(player);
+                }
             }
             System.out.println("Informações dos jogadores lidas com sucesso do arquivo players.txt");
         } catch (IOException e) {
@@ -273,20 +282,19 @@ public class HelloController implements Initializable {
         }
 
         // Converte ArrayList para Array
-        Player[] players = new Player[playersList.size()];
-        ranks = playersList.toArray(players);
+        ranks = playersList.toArray(ranks);
 
-        // Exibição das informações dos jogadores
-        for (Player player : players) {
-            System.out.println("Username: " + player.getUsername() + ", Score: " + player.getScore());
-        }
+        //Print da rank list
+        /*for(Player jogador: ranks)
+        {
+            System.out.println(jogador.getUsername() + " " + jogador.getScore());
+        }*/
     }
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        // Inicialização se necessário
+        readRanks();
     }
 }
