@@ -18,30 +18,27 @@ public class game2Controller implements Initializable {
     @FXML
     private Label wordLabel;
     private String lang;
-    private String dif;
-
     public void setLang(String lang) {
         this.lang = lang;
-    }
-
-    public void setDif(String dif)
-    {
-        this.dif = dif;
+        initializeComponents();
     }
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("Inicializando controlador.");
+    }
+
+    private void initializeComponents() {
+        System.out.println("LANG: " + lang);
 
         String filePath = "";
-        if(lang.equals("English")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+        if (lang.equals("English")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
-        if(lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+        if (lang.equals("Portuguese")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         }
-        if(lang.equals("French")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+        if (lang.equals("French")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
         String threeLetterWord = findRandomLetterWord(filePath);
@@ -51,7 +48,6 @@ public class game2Controller implements Initializable {
         } else {
             wordLabel.setText("No word found");
         }
-
     }
 
     private String findRandomLetterWord(String filePath) {
@@ -59,7 +55,7 @@ public class game2Controller implements Initializable {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.length() == Integer.parseInt(dif)+2) {
+                if (line.length() == 4) {
                     threeLetterWords.add(line);
                 }
             }
@@ -75,4 +71,5 @@ public class game2Controller implements Initializable {
         int randomIndex = random.nextInt(threeLetterWords.size());
         return threeLetterWords.get(randomIndex);
     }
+
 }

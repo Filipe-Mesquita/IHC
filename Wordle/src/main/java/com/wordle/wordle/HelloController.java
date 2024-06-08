@@ -64,6 +64,48 @@ public class HelloController implements Initializable {
         }
     }
 
+    private void loadGameFXML(Button x,String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource(fxmlFile));
+            Parent root = loader.load();
+
+            if(fxmlFile.equals("game1-view.fxml"))
+            {
+                game1Controller newController = loader.getController();
+                newController.setLang(values[currentIndex]);
+            }
+            if(fxmlFile.equals("game2-view.fxml"))
+            {
+                game2Controller newController = loader.getController();
+                newController.setLang(values[currentIndex]);
+            }
+            if(fxmlFile.equals("game3-view.fxml"))
+            {
+                game2Controller newController = loader.getController();
+                newController.setLang(values[currentIndex]);
+            }
+            if(fxmlFile.equals("game4-view.fxml"))
+            {
+                game2Controller newController = loader.getController();
+                newController.setLang(values[currentIndex]);
+            }
+            if(fxmlFile.equals("game5-view.fxml"))
+            {
+                game2Controller newController = loader.getController();
+                newController.setLang(values[currentIndex]);
+            }
+
+            Stage currentStage = (Stage) x.getScene().getWindow();
+            currentStage.close();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void startFunc() {
         System.out.println("Ir pros settings "); // Debugging line
@@ -80,29 +122,28 @@ public class HelloController implements Initializable {
     public void playFunc() {
 
         if(currentIndex2 == 0){
-
-            loadFXML(play, "game1-view.fxml");
+            loadGameFXML(play, "game1-view.fxml");
         }
 
 
         if(currentIndex2 == 1){
 
-            loadFXML(play,"game2-view.fxml");
+            loadGameFXML(play,"game2-view.fxml");
         }
 
         if(currentIndex2 == 2){
 
-            loadFXML(play,"game3-view.fxml");
+            loadGameFXML(play,"game3-view.fxml");
         }
 
         if(currentIndex2 == 3){
 
-            loadFXML(play,"game4-view.fxml");
+            loadGameFXML(play,"game4-view.fxml");
         }
 
         if(currentIndex2 == 4){
 
-            loadFXML(play,"game5-view.fxml");
+            loadGameFXML(play,"game5-view.fxml");
         }
 
 

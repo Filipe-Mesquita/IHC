@@ -20,7 +20,7 @@
          <children>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="wordLabel" prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: e8e400; -fx-border-radius: 10px;" text="Label" />
+                  <Label prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: e8e400; -fx-border-radius: 10px;" text="Label" />
                   <Label prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="Label">
                      <FlowPane.margin>
                         <Insets left="50.0" right="50.0" />
@@ -312,4 +312,7 @@
          </children>
       </GridPane>
    </bottom>
+   <top>
+      <Label fx:id="wordLabel" text="Label" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>

@@ -16,11 +16,30 @@ public class game1Controller implements Initializable {
 
     @FXML
     private Label wordLabel;
+    private String lang;
+    public void setLang(String lang) {
+        this.lang = lang;
+        initializeComponents();
+    }
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("Inicializando controlador.");
-        String filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+    }
+
+    private void initializeComponents() {
+        System.out.println("LANG: " + lang);
+
+        String filePath = "";
+        if (lang.equals("English")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+        }
+        if (lang.equals("Portuguese")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+        }
+        if (lang.equals("French")) {
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+        }
+
         String threeLetterWord = findRandomLetterWord(filePath);
         if (threeLetterWord != null) {
             wordLabel.setText(threeLetterWord);
@@ -28,10 +47,7 @@ public class game1Controller implements Initializable {
         } else {
             wordLabel.setText("No word found");
         }
-
-}
-
-
+    }
 
     private String findRandomLetterWord(String filePath) {
         List<String> threeLetterWords = new ArrayList<>();
