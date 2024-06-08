@@ -48,7 +48,6 @@ public class HelloController implements Initializable {
 
 
     @FXML public void exitFunc() {
-        System.out.println("Saindo do aplicativo."); // Debugging line
         Platform.exit();
     }
 
