@@ -1,5 +1,3 @@
-#title {
-    -fx-border-color: yellow;
-    -fx-border-width: 5px;
-    -fx-padding: 5px;
+.user-textfield {
+    -fx-text-fill: #e8e400;
 }

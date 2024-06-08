@@ -15,6 +15,8 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.io.*;
+import java.util.ArrayList;
 
 public class HelloController implements Initializable {
     @FXML
@@ -44,6 +46,11 @@ public class HelloController implements Initializable {
     private final String[] difficulty = {"1", "2", "3", "4", "5"};
     private int currentIndex = 0;
     private int currentIndex2 = 0;
+    private String username;
+
+    private Player[] ranks = new Player[10];
+
+    private Player newPLayer;
 
 
 
@@ -81,17 +88,17 @@ public class HelloController implements Initializable {
             }
             if(fxmlFile.equals("game3-view.fxml"))
             {
-                game2Controller newController = loader.getController();
+                game3Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
             }
             if(fxmlFile.equals("game4-view.fxml"))
             {
-                game2Controller newController = loader.getController();
+                game4Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
             }
             if(fxmlFile.equals("game5-view.fxml"))
             {
-                game2Controller newController = loader.getController();
+                game5Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
             }
 
@@ -121,31 +128,52 @@ public class HelloController implements Initializable {
     @FXML
     public void playFunc() {
 
-        if(currentIndex2 == 0){
-            loadGameFXML(play, "game1-view.fxml");
+        username = User.getText();
+        if (username.length() >= 3) {
+
+           /* int  n;
+            for(n = 0; n < ranks.length; n ++)
+            {
+                if(ranks[n] == null)
+                {
+                    break;
+                }
+            }*/
+
+            newPLayer = new  Player(username);
+
+
+            System.out.println(newPLayer.getUsername());
+
+            if (currentIndex2 == 0) {
+                loadGameFXML(play, "game1-view.fxml");
+            }
+
+
+            if (currentIndex2 == 1) {
+
+                loadGameFXML(play, "game2-view.fxml");
+            }
+
+            if (currentIndex2 == 2) {
+
+                loadGameFXML(play, "game3-view.fxml");
+            }
+
+            if (currentIndex2 == 3) {
+
+                loadGameFXML(play, "game4-view.fxml");
+            }
+
+            if (currentIndex2 == 4) {
+
+                loadGameFXML(play, "game5-view.fxml");
+            }
         }
-
-
-        if(currentIndex2 == 1){
-
-            loadGameFXML(play,"game2-view.fxml");
+        else
+        {
+            User.requestFocus();
         }
-
-        if(currentIndex2 == 2){
-
-            loadGameFXML(play,"game3-view.fxml");
-        }
-
-        if(currentIndex2 == 3){
-
-            loadGameFXML(play,"game4-view.fxml");
-        }
-
-        if(currentIndex2 == 4){
-
-            loadGameFXML(play,"game5-view.fxml");
-        }
-
 
 
     }
@@ -207,6 +235,52 @@ public class HelloController implements Initializable {
         }
     }
 
+
+
+    private void saveRanks() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ranks.txt"))) {
+            for (Player player : ranks) {
+                writer.write("Username: " + player.getUsername() + ", Score: " + player.getScore());
+                writer.newLine(); // Nova linha após cada jogador
+            }
+            System.out.println("Informações dos jogadores gravadas com sucesso no arquivo players.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void readRanks()
+    {
+        ArrayList<Player> playersList = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("players.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Processamento de cada linha
+                String[] parts = line.split(", ");
+                String username = parts[0].split(": ")[1];
+                int score = Integer.parseInt(parts[1].split(": ")[1]);
+
+                // Criação de um novo objeto Player e adição à lista
+                Player player = new Player(username);
+                player.setScore(score);
+                playersList.add(player);
+            }
+            System.out.println("Informações dos jogadores lidas com sucesso do arquivo players.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Converte ArrayList para Array
+        Player[] players = new Player[playersList.size()];
+        ranks = playersList.toArray(players);
+
+        // Exibição das informações dos jogadores
+        for (Player player : players) {
+            System.out.println("Username: " + player.getUsername() + ", Score: " + player.getScore());
+        }
+    }
 
 
 
