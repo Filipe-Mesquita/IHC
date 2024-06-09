@@ -21,26 +21,41 @@
             <children>
                 <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="0">
                     <children>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                        <Label fx:id="l11" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font></Label>
+                        <Label fx:id="l12" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l13" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l14" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l15" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
                     </children>
                 </FlowPane>
                 <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -48,104 +63,164 @@
                         <Insets />
                     </GridPane.margin>
                     <children>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                        <Label fx:id="l21" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l22" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l23" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l24" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l25" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
                     </children></FlowPane>
                 <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets />
                     </GridPane.margin>
                     <children>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                        <Label fx:id="l31" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l32" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l33" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l34" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l35" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
                     </children></FlowPane>
                 <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                     <GridPane.margin>
                         <Insets />
                     </GridPane.margin>
                     <children>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                        <Label fx:id="l41" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l42" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l43" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l44" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l45" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
                     </children></FlowPane>
                 <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                     <GridPane.margin>
                         <Insets />
                     </GridPane.margin>
                     <children>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                        <Label fx:id="l51" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l52" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l53" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l54" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
-                        <Label prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="">
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
+                        <Label fx:id="l55" alignment="CENTER" contentDisplay="CENTER" prefHeight="90" prefWidth="90" style="-fx-border-color: #e8e400; -fx-border-radius: 10px;" text="" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="10.0" right="10.0" />
-                            </FlowPane.margin></Label>
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Arial Black" size="20.0" />
+                            </font></Label>
                     </children></FlowPane>
             </children>
         </GridPane>
@@ -164,14 +239,15 @@
             <children>
                 <FlowPane alignment="BOTTOM_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" rowValignment="BOTTOM">
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Q" textFill="WHITE">
+
+                        <Button fx:id="bQ" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Q" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="W" textFill="WHITE">
+                        <Button fx:id="bW" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="W" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
@@ -179,56 +255,56 @@
                                 <Font name="Arial Black" size="12.0" />
                             </font>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="E" textFill="WHITE">
+                        <Button fx:id="bE" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="E" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="R" textFill="WHITE">
+                        <Button fx:id="bR" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="R" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="T" textFill="WHITE">
+                        <Button fx:id="bT" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="T" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Y" textFill="WHITE">
+                        <Button fx:id="bY" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Y" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="U" textFill="WHITE">
+                        <Button fx:id="bU" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="U" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="I" textFill="WHITE">
+                        <Button fx:id="bI" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="I" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="O" textFill="WHITE">
+                        <Button fx:id="bO" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="O" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="P" textFill="WHITE">
+                        <Button fx:id="bP" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="P" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
@@ -242,63 +318,63 @@
 
                 <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="A" textFill="WHITE">
+                        <Button fx:id="bA" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="A" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="S" textFill="WHITE">
+                        <Button fx:id="bS" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="S" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="D" textFill="WHITE">
+                        <Button fx:id="bD" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="D" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="F" textFill="WHITE">
+                        <Button fx:id="bF" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="F" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="G" textFill="WHITE">
+                        <Button fx:id="bG" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="G" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="H" textFill="WHITE">
+                        <Button fx:id="bH" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="H" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="J" textFill="WHITE">
+                        <Button fx:id="bJ" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="J" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="K" textFill="WHITE">
+                        <Button fx:id="bK" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="K" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="L" textFill="WHITE">
+                        <Button fx:id="bL" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="L" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
@@ -317,77 +393,64 @@
 
                 <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="67.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="ENTER" textFill="WHITE">
+                        <Button fx:id="bENTER" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="67.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="ENTER" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Z" textFill="WHITE">
+                        <Button fx:id="bZ" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="Z" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="X" textFill="WHITE">
+                        <Button fx:id="bX" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="X" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="C" textFill="WHITE">
+                        <Button fx:id="bC" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="C" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="V" textFill="WHITE">
+                        <Button fx:id="bV" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="V" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="B" textFill="WHITE">
+                        <Button fx:id="bB" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="B" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="N" textFill="WHITE">
+                        <Button fx:id="bN" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="N" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="M" textFill="WHITE">
+                        <Button fx:id="bM" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="M" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
                             <font>
                                 <Font name="Arial Black" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="O" textFill="WHITE">
-                            <FlowPane.margin>
-                                <Insets left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Arial Black" size="12.0" />
-                            </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="40" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="P" textFill="WHITE">
-                            <FlowPane.margin>
-                                <Insets left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Arial Black" size="12.0" />
-                            </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="60.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="⌫" textFill="WHITE">
+
+                        <Button fx:id="bDELETE" alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="60.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: black; -fx-background-radius: 5px;" text="⌫" textFill="WHITE">
                             <FlowPane.margin>
                                 <Insets left="5.0" right="5.0" />
                             </FlowPane.margin>
