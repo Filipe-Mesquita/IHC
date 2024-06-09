@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
 
 public class game5Controller implements Initializable {
     @FXML
+    public Button bQ, bW, bE, bR, bT, bY, bU, bI, bO, bP, bA, bS, bD, bF, bG, bH, bJ, bK, bL, bENTER, bZ, bX, bC, bV, bB, bN, bM, bDELETE;
+    @FXML
+    public Label l11, l12, l13, l14, l15, l16, l17, l21, l22, l23, l24, l25, l26, l27, l31, l32, l33, l34, l35, l36, l37, l41, l42, l43, l44, l45, l46, l47, l51, l52, l53, l54, l55, l56, l57;
+    @FXML
     private Label wordLabel;
     @FXML
     private Button back;
@@ -48,16 +52,23 @@ public class game5Controller implements Initializable {
             filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
-        String threeLetterWord = findRandomLetterWord(filePath);
-        if (threeLetterWord != null) {
-            wordLabel.setText(threeLetterWord);
-            System.out.println(wordLabel);
+        char[] threeLetterWord = findRandomLetterWord(filePath);
+        if (threeLetterWord != null && threeLetterWord.length == 7) {
+            StringBuilder wordBuilder = new StringBuilder();
+            for (int i = 0; i < threeLetterWord.length; i++) {
+                wordBuilder.append(threeLetterWord).append(' ');
+
+                System.out.println(threeLetterWord[i]);
+            }
+            wordLabel.setText(wordBuilder.toString().trim());
+            System.out.println(); // Move to the next line in the console
         } else {
             wordLabel.setText("No word found");
         }
     }
 
-    private String findRandomLetterWord(String filePath) {
+
+    private char[] findRandomLetterWord(String filePath) {
         List<String> threeLetterWords = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -76,7 +87,9 @@ public class game5Controller implements Initializable {
 
         Random random = new Random();
         int randomIndex = random.nextInt(threeLetterWords.size());
-        return threeLetterWords.get(randomIndex);
+        String randomWord = threeLetterWords.get(randomIndex);
+
+        return randomWord.toCharArray();
     }
 
     public void funcBack(){

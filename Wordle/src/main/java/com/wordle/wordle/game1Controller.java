@@ -1,4 +1,5 @@
 package com.wordle.wordle;
+
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import java.io.FileReader;
@@ -15,22 +16,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.util.List;
 
 public class game1Controller implements Initializable {
 
     @FXML
+    public Button bQ, bW, bE, bR, bT, bY, bU, bI, bO, bP, bA, bS, bD, bF, bG, bH, bJ, bK, bL, bENTER, bZ, bX, bC, bV, bB, bN, bM, bDELETE;
+    @FXML
+    public Label l11, l12, l13, l21, l22, l23, l31, l32, l33, l41, l42, l43, l51, l52, l53;
+    @FXML
     private Label wordLabel;
     @FXML
-    private  Button back;
+    private Button back;
     @FXML
     private String lang;
-
-
-
-
-
 
     public void setLang(String lang) {
         this.lang = lang;
@@ -55,16 +54,22 @@ public class game1Controller implements Initializable {
             filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
-        String threeLetterWord = findRandomLetterWord(filePath);
-        if (threeLetterWord != null) {
-            wordLabel.setText(threeLetterWord);
-            System.out.println(wordLabel);
+        char[] threeLetterWord = findRandomLetterWord(filePath);
+        if (threeLetterWord != null && threeLetterWord.length == 3) {
+            StringBuilder wordBuilder = new StringBuilder();
+            for (int i =0;i<threeLetterWord.length;i++) {
+                wordBuilder.append(threeLetterWord).append(' ');
+
+                System.out.println(threeLetterWord[i]);
+            }
+            wordLabel.setText(wordBuilder.toString().trim());
+            System.out.println(); // Move to the next line in the console
         } else {
             wordLabel.setText("No word found");
         }
     }
 
-    private String findRandomLetterWord(String filePath) {
+    private char[] findRandomLetterWord(String filePath) {
         List<String> threeLetterWords = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -83,22 +88,24 @@ public class game1Controller implements Initializable {
 
         Random random = new Random();
         int randomIndex = random.nextInt(threeLetterWords.size());
-        return threeLetterWords.get(randomIndex);
+        String randomWord = threeLetterWords.get(randomIndex);
+
+        return randomWord.toCharArray();
     }
 
-public void funcBack(){
-    try {
-        FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("settings-view.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) back.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-    } catch (IOException e) {
-        e.printStackTrace();
+    public void funcBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("settings-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) back.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
-}
 
 
 

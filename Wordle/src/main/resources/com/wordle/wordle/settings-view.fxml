@@ -83,7 +83,7 @@
                         <Insets left="8.0" />
                      </FlowPane.margin>
                   </Label>
-                  <TextField fx:id="User" styleClass="user-textfield" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: #55945d; -fx-background-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10;">
+                  <TextField fx:id="User" maxWidth="150.0" minHeight="50.0" minWidth="150.0" style="-fx-background-color: #55945d; -fx-background-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-border-radius: 10;" styleClass="user-textfield">
                      <FlowPane.margin>
                         <Insets left="155.0" />
                      </FlowPane.margin>

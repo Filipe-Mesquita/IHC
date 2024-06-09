@@ -1,10 +1,10 @@
+Username: miguel, Score: 0
+Username: filipe, Score: 0
+Username: rafa, Score: 0
+Username: rodrigo, Score: 0
+Username: nono, Score: 0
 Username: Filipe, Score: 0
-Username: Miguel, Score: 0
-Username: Rafa, Score: 0
-Username: Rodrigo, Score: 0
-Username: Joana, Score: 0
-Username: Antonio, Score: 0
-Username: Gui, Score: 0
-Username: João, Score: 0
-Username: Tibursio, Score: 0
-Username: Tibursia, Score: 0
+
+
+
+
