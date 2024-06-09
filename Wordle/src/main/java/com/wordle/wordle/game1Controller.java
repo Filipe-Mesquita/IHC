@@ -131,6 +131,7 @@ public class game1Controller implements Initializable {
     }
 
     private void handleLetterInput(char letter) {
+        System.out.println("Letter input: " + letter);
         Label currentLabel = getCurrentLabel();
         if (currentLabel != null) {
             currentLabel.setText(String.valueOf(letter));
@@ -139,12 +140,13 @@ public class game1Controller implements Initializable {
     }
 
     private void handleDeleteInput() {
+        System.out.println("Delete input");
         Label currentLabel = getCurrentLabel();
         if (currentLabel != null) {
             if (!currentLabel.getText().isEmpty()) {
                 currentLabel.setText("");
             } else {
-                if (currentRow > 1) {
+                if (currentRow >= 1) {
                     moveToPreviousLabel();
                     currentLabel = getCurrentLabel();
                     if (currentLabel != null) {
@@ -228,9 +230,16 @@ public class game1Controller implements Initializable {
     }
 
     private void moveToPreviousLabel() {
-        if (currentColumn > 1) {
+        if(currentColumn != 1 && currentRow!=1){
+            if(currentColumn > 1) {
             currentColumn--;
+            }
+            else {
+                currentRow--;
+                currentColumn=3;
+            }
         }
+
     }
 
     private void moveToNextRow() {
