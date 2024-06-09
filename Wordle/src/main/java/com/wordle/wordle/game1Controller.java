@@ -34,6 +34,7 @@ public class game1Controller implements Initializable {
     private int currentRow = 1;
     private int currentColumn = 1;
     private char[] targetWord;
+    private boolean rowChanged = false;
 
     public void setLang(String lang) {
         this.lang = lang;
@@ -135,7 +136,6 @@ public class game1Controller implements Initializable {
         if (currentLabel != null) {
             currentLabel.setText(String.valueOf(letter));
             moveToNextLabel();
-            updateLabelColors(); // Atualiza as cores das labels após cada entrada de letra
         }
     }
 
@@ -144,111 +144,7 @@ public class game1Controller implements Initializable {
         if (currentLabel != null) {
             currentLabel.setText("");
             moveToPreviousLabel();
-            updateLabelColors(); // Atualiza as cores das labels após cada exclusão
         }
-    }
-
-    private void updateLabelColors() {
-        String inputWord = getInputWord();
-
-        // Verifica cada letra do input com a letra correspondente da palavra alvo
-        for (int i = 0; i < inputWord.length(); i++) {
-            char inputChar = inputWord.charAt(i);
-            char targetChar = targetWord[i];
-
-            // Se a letra estiver correta, torna a label verde
-            if (inputChar == targetChar) {
-                switch (currentRow) {
-                    case 1:
-                        switch (i + 1) {
-                            case 1:
-                                l11.setStyle("-fx-background-color: green;");
-                                break;
-                            case 2:
-                                l12.setStyle("-fx-background-color: green;");
-                                break;
-                            case 3:
-                                l13.setStyle("-fx-background-color: green;");
-                                break;
-                        }
-                        break;
-                    case 2:
-                        switch (i + 1) {
-                            case 1:
-                                l21.setStyle("-fx-background-color: green;");
-                                break;
-                            case 2:
-                                l22.setStyle("-fx-background-color: green;");
-                                break;
-                            case 3:
-                                l23.setStyle("-fx-background-color: green;");
-                                break;
-                        }
-                        break;
-                    case 3:
-                        switch (i + 1) {
-                            case 1:
-                                l31.setStyle("-fx-background-color: green;");
-                                break;
-                            case 2:
-                                l32.setStyle("-fx-background-color: green;");
-                                break;
-                            case 3:
-                                l33.setStyle("-fx-background-color: green;");
-                                break;
-                        }
-                        break;
-                    case 4:
-                        switch (i + 1) {
-                            case 1:
-                                l41.setStyle("-fx-background-color: green;");
-                                break;
-                            case 2:
-                                l42.setStyle("-fx-background-color: green;");
-                                break;
-                            case 3:
-                                l43.setStyle("-fx-background-color: green;");
-                                break;
-                        }
-                        break;
-                    case 5:
-                        switch (i + 1) {
-                            case 1:
-                                l51.setStyle("-fx-background-color: green;");
-                                break;
-                            case 2:
-                                l52.setStyle("-fx-background-color: green;");
-                                break;
-                            case 3:
-                                l53.setStyle("-fx-background-color: green;");
-                                break;
-                        }
-                        break;
-                }
-            }
-        }
-    }
-
-    private String getInputWord() {
-        StringBuilder inputWord = new StringBuilder();
-        switch (currentRow) {
-            case 1:
-                inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText());
-                break;
-            case 2:
-                inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText());
-                break;
-            case 3:
-                inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText());
-                break;
-            case 4:
-                inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText());
-                break;
-            case 5:
-                inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText());
-                break;
-        }
-        return inputWord.toString();
     }
 
     private void handleEnterInput() {
@@ -282,48 +178,33 @@ public class game1Controller implements Initializable {
         switch (currentRow) {
             case 1:
                 switch (currentColumn) {
-                    case 1:
-                        return l11;
-                    case 2:
-                        return l12;
-                    case 3:
-                        return l13;
+                    case 1: return l11;
+                    case 2: return l12;
+                    case 3: return l13;
                 }
             case 2:
                 switch (currentColumn) {
-                    case 1:
-                        return l21;
-                    case 2:
-                        return l22;
-                    case 3:
-                        return l23;
+                    case 1: return l21;
+                    case 2: return l22;
+                    case 3: return l23;
                 }
             case 3:
                 switch (currentColumn) {
-                    case 1:
-                        return l31;
-                    case 2:
-                        return l32;
-                    case 3:
-                        return l33;
+                    case 1: return l31;
+                    case 2: return l32;
+                    case 3: return l33;
                 }
             case 4:
                 switch (currentColumn) {
-                    case 1:
-                        return l41;
-                    case 2:
-                        return l42;
-                    case 3:
-                        return l43;
+                    case 1: return l41;
+                    case 2: return l42;
+                    case 3: return l43;
                 }
             case 5:
                 switch (currentColumn) {
-                    case 1:
-                        return l51;
-                    case 2:
-                        return l52;
-                    case 3:
-                        return l53;
+                    case 1: return l51;
+                    case 2: return l52;
+                    case 3: return l53;
                 }
             default:
                 return null;
@@ -337,15 +218,19 @@ public class game1Controller implements Initializable {
     }
 
     private void moveToPreviousLabel() {
-        if (currentColumn > 1) {
+        if (currentColumn > 1 && !rowChanged) {
             currentColumn--;
+        } else if (currentColumn == 1 && currentRow > 1 && !rowChanged) {
+            currentRow--;
+            currentColumn = 3; // Moving to the last column of the previous row
         }
     }
 
     private void moveToNextRow() {
-        if (currentRow < 5) {
+        if (!rowChanged && currentRow < 5) {
             currentRow++;
             currentColumn = 1;
+            rowChanged = true;
         }
     }
 
@@ -383,5 +268,4 @@ public class game1Controller implements Initializable {
         }
     }
 }
-
 

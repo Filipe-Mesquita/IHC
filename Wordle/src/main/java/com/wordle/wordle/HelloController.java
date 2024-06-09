@@ -355,7 +355,7 @@ public class HelloController implements Initializable {
 
 
     private void saveRanks() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
             for (Player player : ranks) {
                 if (player != null) {
                     writer.write("Username: " + player.getUsername() + ", Score: " + player.getScore());
@@ -373,7 +373,7 @@ public class HelloController implements Initializable {
     {
         ArrayList<Player> playersList = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 // Verifica se a linha está no formato esperado
