@@ -31,6 +31,10 @@ public class game1Controller implements Initializable {
     @FXML
     private String lang;
 
+    private int currentRow = 1;
+    private int currentColumn = 1;
+    private char[] targetWord;
+
     public void setLang(String lang) {
         this.lang = lang;
         initializeComponents();
@@ -38,6 +42,7 @@ public class game1Controller implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
+        initializeKeyboard();
     }
 
     private void initializeComponents() {
@@ -54,13 +59,13 @@ public class game1Controller implements Initializable {
             filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
-        char[] threeLetterWord = findRandomLetterWord(filePath);
-        if (threeLetterWord != null && threeLetterWord.length == 3) {
+        targetWord = findRandomLetterWord(filePath);
+        if (targetWord != null && targetWord.length == 3) {
             StringBuilder wordBuilder = new StringBuilder();
-            for (int i =0;i<threeLetterWord.length;i++) {
-                wordBuilder.append(threeLetterWord).append(' ');
+            for (int i = 0; i < targetWord.length; i++) {
+                wordBuilder.append(targetWord[i]).append(' ');
 
-                System.out.println(threeLetterWord[i]);
+                System.out.println(targetWord[i]);
             }
             wordLabel.setText(wordBuilder.toString().trim());
             System.out.println(); // Move to the next line in the console
@@ -93,6 +98,279 @@ public class game1Controller implements Initializable {
         return randomWord.toCharArray();
     }
 
+    private void initializeKeyboard() {
+        // Assign action listeners to each button to handle letter input and actions
+        bQ.setOnAction(e -> handleLetterInput('Q'));
+        bW.setOnAction(e -> handleLetterInput('W'));
+        bE.setOnAction(e -> handleLetterInput('E'));
+        bR.setOnAction(e -> handleLetterInput('R'));
+        bT.setOnAction(e -> handleLetterInput('T'));
+        bY.setOnAction(e -> handleLetterInput('Y'));
+        bU.setOnAction(e -> handleLetterInput('U'));
+        bI.setOnAction(e -> handleLetterInput('I'));
+        bO.setOnAction(e -> handleLetterInput('O'));
+        bP.setOnAction(e -> handleLetterInput('P'));
+        bA.setOnAction(e -> handleLetterInput('A'));
+        bS.setOnAction(e -> handleLetterInput('S'));
+        bD.setOnAction(e -> handleLetterInput('D'));
+        bF.setOnAction(e -> handleLetterInput('F'));
+        bG.setOnAction(e -> handleLetterInput('G'));
+        bH.setOnAction(e -> handleLetterInput('H'));
+        bJ.setOnAction(e -> handleLetterInput('J'));
+        bK.setOnAction(e -> handleLetterInput('K'));
+        bL.setOnAction(e -> handleLetterInput('L'));
+        bZ.setOnAction(e -> handleLetterInput('Z'));
+        bX.setOnAction(e -> handleLetterInput('X'));
+        bC.setOnAction(e -> handleLetterInput('C'));
+        bV.setOnAction(e -> handleLetterInput('V'));
+        bB.setOnAction(e -> handleLetterInput('B'));
+        bN.setOnAction(e -> handleLetterInput('N'));
+        bM.setOnAction(e -> handleLetterInput('M'));
+        bDELETE.setOnAction(e -> handleDeleteInput());
+        bENTER.setOnAction(e -> handleEnterInput());
+    }
+
+    private void handleLetterInput(char letter) {
+        Label currentLabel = getCurrentLabel();
+        if (currentLabel != null) {
+            currentLabel.setText(String.valueOf(letter));
+            moveToNextLabel();
+            updateLabelColors(); // Atualiza as cores das labels após cada entrada de letra
+        }
+    }
+
+    private void handleDeleteInput() {
+        Label currentLabel = getCurrentLabel();
+        if (currentLabel != null) {
+            currentLabel.setText("");
+            moveToPreviousLabel();
+            updateLabelColors(); // Atualiza as cores das labels após cada exclusão
+        }
+    }
+
+    private void updateLabelColors() {
+        String inputWord = getInputWord();
+
+        // Verifica cada letra do input com a letra correspondente da palavra alvo
+        for (int i = 0; i < inputWord.length(); i++) {
+            char inputChar = inputWord.charAt(i);
+            char targetChar = targetWord[i];
+
+            // Se a letra estiver correta, torna a label verde
+            if (inputChar == targetChar) {
+                switch (currentRow) {
+                    case 1:
+                        switch (i + 1) {
+                            case 1:
+                                l11.setStyle("-fx-background-color: green;");
+                                break;
+                            case 2:
+                                l12.setStyle("-fx-background-color: green;");
+                                break;
+                            case 3:
+                                l13.setStyle("-fx-background-color: green;");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (i + 1) {
+                            case 1:
+                                l21.setStyle("-fx-background-color: green;");
+                                break;
+                            case 2:
+                                l22.setStyle("-fx-background-color: green;");
+                                break;
+                            case 3:
+                                l23.setStyle("-fx-background-color: green;");
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (i + 1) {
+                            case 1:
+                                l31.setStyle("-fx-background-color: green;");
+                                break;
+                            case 2:
+                                l32.setStyle("-fx-background-color: green;");
+                                break;
+                            case 3:
+                                l33.setStyle("-fx-background-color: green;");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (i + 1) {
+                            case 1:
+                                l41.setStyle("-fx-background-color: green;");
+                                break;
+                            case 2:
+                                l42.setStyle("-fx-background-color: green;");
+                                break;
+                            case 3:
+                                l43.setStyle("-fx-background-color: green;");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch (i + 1) {
+                            case 1:
+                                l51.setStyle("-fx-background-color: green;");
+                                break;
+                            case 2:
+                                l52.setStyle("-fx-background-color: green;");
+                                break;
+                            case 3:
+                                l53.setStyle("-fx-background-color: green;");
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
+    private String getInputWord() {
+        StringBuilder inputWord = new StringBuilder();
+        switch (currentRow) {
+            case 1:
+                inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText());
+                break;
+            case 2:
+                inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText());
+                break;
+            case 3:
+                inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText());
+                break;
+            case 4:
+                inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText());
+                break;
+            case 5:
+                inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText());
+                break;
+        }
+        return inputWord.toString();
+    }
+
+    private void handleEnterInput() {
+        if (isRowFullyFilled()) {
+            if (checkWord()) {
+                wordLabel.setText("Correct! You won!");
+            } else {
+                moveToNextRow();
+            }
+        }
+    }
+
+    private boolean isRowFullyFilled() {
+        switch (currentRow) {
+            case 1:
+                return !l11.getText().isEmpty() && !l12.getText().isEmpty() && !l13.getText().isEmpty();
+            case 2:
+                return !l21.getText().isEmpty() && !l22.getText().isEmpty() && !l23.getText().isEmpty();
+            case 3:
+                return !l31.getText().isEmpty() && !l32.getText().isEmpty() && !l33.getText().isEmpty();
+            case 4:
+                return !l41.getText().isEmpty() && !l42.getText().isEmpty() && !l43.getText().isEmpty();
+            case 5:
+                return !l51.getText().isEmpty() && !l52.getText().isEmpty() && !l53.getText().isEmpty();
+            default:
+                return false;
+        }
+    }
+
+    private Label getCurrentLabel() {
+        switch (currentRow) {
+            case 1:
+                switch (currentColumn) {
+                    case 1:
+                        return l11;
+                    case 2:
+                        return l12;
+                    case 3:
+                        return l13;
+                }
+            case 2:
+                switch (currentColumn) {
+                    case 1:
+                        return l21;
+                    case 2:
+                        return l22;
+                    case 3:
+                        return l23;
+                }
+            case 3:
+                switch (currentColumn) {
+                    case 1:
+                        return l31;
+                    case 2:
+                        return l32;
+                    case 3:
+                        return l33;
+                }
+            case 4:
+                switch (currentColumn) {
+                    case 1:
+                        return l41;
+                    case 2:
+                        return l42;
+                    case 3:
+                        return l43;
+                }
+            case 5:
+                switch (currentColumn) {
+                    case 1:
+                        return l51;
+                    case 2:
+                        return l52;
+                    case 3:
+                        return l53;
+                }
+            default:
+                return null;
+        }
+    }
+
+    private void moveToNextLabel() {
+        if (currentColumn < 3) {
+            currentColumn++;
+        }
+    }
+
+    private void moveToPreviousLabel() {
+        if (currentColumn > 1) {
+            currentColumn--;
+        }
+    }
+
+    private void moveToNextRow() {
+        if (currentRow < 5) {
+            currentRow++;
+            currentColumn = 1;
+        }
+    }
+
+    private boolean checkWord() {
+        StringBuilder inputWord = new StringBuilder();
+        switch (currentRow) {
+            case 1:
+                inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText());
+                break;
+            case 2:
+                inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText());
+                break;
+            case 3:
+                inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText());
+                break;
+            case 4:
+                inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText());
+                break;
+            case 5:
+                inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText());
+                break;
+        }
+        return inputWord.toString().equals(new String(targetWord));
+    }
+
     public void funcBack() {
         try {
             FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("settings-view.fxml"));
@@ -105,7 +383,5 @@ public class game1Controller implements Initializable {
         }
     }
 }
-
-
 
 
