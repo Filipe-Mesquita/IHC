@@ -142,8 +142,15 @@ public class game1Controller implements Initializable {
     private void handleDeleteInput() {
         Label currentLabel = getCurrentLabel();
         if (currentLabel != null) {
-            currentLabel.setText("");
-            moveToPreviousLabel();
+            if (!currentLabel.getText().isEmpty()) {
+                currentLabel.setText("");
+            } else {
+                moveToPreviousLabel();
+                currentLabel = getCurrentLabel();
+                if (currentLabel != null) {
+                    currentLabel.setText("");
+                }
+            }
         }
     }
 
@@ -218,7 +225,7 @@ public class game1Controller implements Initializable {
     }
 
     private void moveToPreviousLabel() {
-        if (currentColumn > 1 && !rowChanged) {
+        if (currentColumn > 1) {
             currentColumn--;
         } else if (currentColumn == 1 && currentRow > 1 && !rowChanged) {
             currentRow--;
