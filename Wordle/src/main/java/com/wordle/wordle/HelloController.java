@@ -22,8 +22,6 @@ public class HelloController implements Initializable {
     @FXML
     private Label title;
     @FXML
-    private Label madeBy;
-    @FXML
     private Button start;
     @FXML
     private Button back;
@@ -54,6 +52,50 @@ public class HelloController implements Initializable {
 
 
 
+    //Ranking Variables
+    @FXML
+    private Label pos1user;
+    @FXML
+    private Label pos1score;
+    @FXML
+    private Label pos2user;
+    @FXML
+    private Label pos2score;
+    @FXML
+    private Label pos3user;
+    @FXML
+    private Label pos3score;
+    @FXML
+    private Label pos4user;
+    @FXML
+    private Label pos4score;
+    @FXML
+    private Label pos5user;
+    @FXML
+    private Label pos5score;
+    @FXML
+    private Label pos6user;
+    @FXML
+    private Label pos6score;
+    @FXML
+    private Label pos7user;
+    @FXML
+    private Label pos7score;
+    @FXML
+    private Label pos8user;
+    @FXML
+    private Label pos8score;
+    @FXML
+    private Label pos9user;
+    @FXML
+    private Label pos9score;
+    @FXML
+    private Label pos10user;
+    @FXML
+    private Label pos10score;
+
+
+
     @FXML public void exitFunc() {
         Platform.exit();
     }
@@ -66,6 +108,69 @@ public class HelloController implements Initializable {
             Stage stage = (Stage) x.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadRankFXML(Button x, String fxmlFile)
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloController.class.getResource(fxmlFile));
+            Parent root = loader.load();
+
+            RankController newController = loader.getController();
+            if(ranks[0] != null) {
+                newController.setU1(ranks[0].getUsername());
+                newController.setS1(Integer.toString(ranks[0].getScore()));
+            }
+            if(ranks[1] != null) {
+                newController.setU2(ranks[1].getUsername());
+                newController.setS2(Integer.toString(ranks[1].getScore()));
+            }
+            if(ranks[2] != null) {
+                newController.setU3(ranks[2].getUsername());
+                newController.setS3(Integer.toString(ranks[2].getScore()));
+            }
+            if(ranks[3] != null) {
+                newController.setU4(ranks[3].getUsername());
+                newController.setS4(Integer.toString(ranks[3].getScore()));
+            }
+            if(ranks[4] != null) {
+                newController.setU5(ranks[4].getUsername());
+                newController.setS5(Integer.toString(ranks[4].getScore()));
+            }
+            if(ranks[5] != null) {
+                newController.setU6(ranks[5].getUsername());
+                newController.setS6(Integer.toString(ranks[5].getScore()));
+            }
+            if(ranks[6] != null) {
+                newController.setU7(ranks[6].getUsername());
+                newController.setS7(Integer.toString(ranks[6].getScore()));
+            }
+            if(ranks[7] != null) {
+                newController.setU8(ranks[7].getUsername());
+                newController.setS8(Integer.toString(ranks[7].getScore()));
+            }
+            if(ranks[8] != null) {
+                newController.setU9(ranks[8].getUsername());
+                newController.setS9(Integer.toString(ranks[8].getScore()));
+            }
+            if(ranks[9] != null) {
+                newController.setU10(ranks[9].getUsername());
+                newController.setS10(Integer.toString(ranks[9].getScore()));
+            }
+
+            newController.setTable();
+
+
+            Stage currentStage = (Stage) x.getScene().getWindow();
+            currentStage.close();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,6 +222,14 @@ public class HelloController implements Initializable {
     public void startFunc() {
         System.out.println("Ir pros settings "); // Debugging line
         loadFXML(start,"Settings-view.fxml");
+    }
+
+    @FXML
+    public void rankFunc()
+    {
+        System.out.println("Ir pros ranks "); // Debugging line
+        loadRankFXML(start,"ranking-view.fxml");
+
     }
 
     @FXML

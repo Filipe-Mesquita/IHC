@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="815.0" prefWidth="700.0" style="-fx-background-color: rgb(50, 50, 50);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wordle.wordle.RankController">
+   <top>
+      <Label text="RANKING" textFill="#55945d" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="60.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label textFill="#e8e400" />
+                  <Label text="USERNAME" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin></Label>
+                  <Label text="SCORE" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin></Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="1" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos1user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos1score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="2" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos2user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos2score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="3" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos3user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos3score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label text="4" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos4user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos4score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label text="5" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos5user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos5score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Label text="6" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos6user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos6score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+               <children>
+                  <Label text="7" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos7user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos7score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+               <children>
+                  <Label text="8" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos8user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos8score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+               <children>
+                  <Label text="9" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos9user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="100.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos9score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="10">
+               <children>
+                  <Label text="10" textFill="#e8e400">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font></Label>
+                  <Label fx:id="pos10user" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 150; -fx-min-width: 150;" text="nome" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="85.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos10score" style="-fx-max-height: 35; -fx-min-height: 35; -fx-max-width: 50; -fx-min-width: 50;" text="100" textFill="#55945d">
+                     <FlowPane.margin>
+                        <Insets left="50.0" />
+                     </FlowPane.margin>
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="11">
+               <children>
+               <Button fx:id="back" minWidth="100.0" mnemonicParsing="false" onAction="#backFunc" style="-fx-background-color: #55945d; -fx-border-radius: 10; -fx-border-width: 2px; -fx-border-color: #e8e400; -fx-background-radius: 10;" text="Back" textFill="#e8e400">
+                  <FlowPane.margin>
+                     <Insets top="5.0" />
+                  </FlowPane.margin>
+                  <font>
+                     <Font name="Arial Black" size="20.0" />
+                  </font></Button>
+               </children>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
