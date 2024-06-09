@@ -79,6 +79,7 @@ public class game1Controller implements Initializable {
         List<String> threeLetterWords = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
+
             while ((line = reader.readLine()) != null) {
                 if (line.length() == 3) {
                     threeLetterWords.add(line);
@@ -156,6 +157,7 @@ public class game1Controller implements Initializable {
 
     private void handleEnterInput() {
         if (isRowFullyFilled()) {
+            checkLettersInWord();
             if (checkWord()) {
                 wordLabel.setText("Correct! You won!");
             } else {
@@ -263,6 +265,80 @@ public class game1Controller implements Initializable {
         return inputWord.toString().equals(new String(targetWord));
     }
 
+    private void checkLettersInWord() {
+        List<Label> currentLabels = getCurrentRowLabels();
+        StringBuilder inputWord = new StringBuilder();
+
+        for (Label label : currentLabels) {
+            inputWord.append(label.getText());
+        }
+
+        char[] inputChars = inputWord.toString().toCharArray();
+        boolean[] foundLetters = new boolean[targetWord.length];
+        boolean[] correctPosition = new boolean[targetWord.length];
+
+        // First pass: check for correct letters in the correct position
+        for (int i = 0; i < inputChars.length; i++) {
+            if (inputChars[i] == targetWord[i]) {
+                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct position
+                correctPosition[i] = true;
+                foundLetters[i] = true;
+            }
+        }
+
+        // Second pass: check for correct letters in the wrong position
+        for (int i = 0; i < inputChars.length; i++) {
+            if (!correctPosition[i]) { // Skip already correctly positioned letters
+                for (int j = 0; j < targetWord.length; j++) {
+                    if (inputChars[i] == targetWord[j] && !foundLetters[j]) {
+                        currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Present but wrong position
+                        foundLetters[j] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Third pass: mark letters not in the word
+        for (int i = 0; i < inputChars.length; i++) {
+            if (!correctPosition[i] && currentLabels.get(i).getStyle().isEmpty()) {
+                currentLabels.get(i).setStyle("-fx-background-color: gray"); // Not in the word
+            }
+        }
+    }
+
+    private List<Label> getCurrentRowLabels() {
+        List<Label> labels = new ArrayList<>();
+        switch (currentRow) {
+            case 1:
+                labels.add(l11);
+                labels.add(l12);
+                labels.add(l13);
+                break;
+            case 2:
+                labels.add(l21);
+                labels.add(l22);
+                labels.add(l23);
+                break;
+            case 3:
+                labels.add(l31);
+                labels.add(l32);
+                labels.add(l33);
+                break;
+            case 4:
+                labels.add(l41);
+                labels.add(l42);
+                labels.add(l43);
+                break;
+            case 5:
+                labels.add(l51);
+                labels.add(l52);
+                labels.add(l53);
+                break;
+        }
+        return labels;
+    }
+
     public void funcBack() {
         try {
             FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("settings-view.fxml"));
@@ -275,4 +351,3 @@ public class game1Controller implements Initializable {
         }
     }
 }
-
