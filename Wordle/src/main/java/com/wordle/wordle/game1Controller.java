@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.io.BufferedReader;
@@ -16,7 +17,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import java.util.List;
 
 public class game1Controller implements Initializable {
 
@@ -34,7 +34,6 @@ public class game1Controller implements Initializable {
     private int currentRow = 1;
     private int currentColumn = 1;
     private char[] targetWord;
-    private boolean rowChanged = false;
 
     public void setLang(String lang) {
         this.lang = lang;
@@ -65,7 +64,6 @@ public class game1Controller implements Initializable {
             StringBuilder wordBuilder = new StringBuilder();
             for (int i = 0; i < targetWord.length; i++) {
                 wordBuilder.append(targetWord[i]).append(' ');
-
                 System.out.println(targetWord[i]);
             }
             wordLabel.setText(wordBuilder.toString().trim());
@@ -146,14 +144,17 @@ public class game1Controller implements Initializable {
             if (!currentLabel.getText().isEmpty()) {
                 currentLabel.setText("");
             } else {
-                moveToPreviousLabel();
-                currentLabel = getCurrentLabel();
-                if (currentLabel != null) {
-                    currentLabel.setText("");
+                if (currentRow > 1) {
+                    moveToPreviousLabel();
+                    currentLabel = getCurrentLabel();
+                    if (currentLabel != null) {
+                        currentLabel.setText("");
+                    }
                 }
             }
         }
     }
+
 
     private void handleEnterInput() {
         if (isRowFullyFilled()) {
@@ -229,17 +230,13 @@ public class game1Controller implements Initializable {
     private void moveToPreviousLabel() {
         if (currentColumn > 1) {
             currentColumn--;
-        } else if (currentColumn == 1 && currentRow > 1 && !rowChanged) {
-            currentRow--;
-            currentColumn = 3; // Moving to the last column of the previous row
         }
     }
 
     private void moveToNextRow() {
-        if (!rowChanged && currentRow < 5) {
+        if (currentRow < 5) {
             currentRow++;
             currentColumn = 1;
-            rowChanged = true;
         }
     }
 
@@ -266,48 +263,50 @@ public class game1Controller implements Initializable {
     }
 
     private void checkLettersInWord() {
-        List<Label> currentLabels = getCurrentRowLabels();
         StringBuilder inputWord = new StringBuilder();
-
-        for (Label label : currentLabels) {
-            inputWord.append(label.getText());
+        List<Label> currentLabels = getCurrentLabels();
+        switch (currentRow) {
+            case 1:
+                inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText());
+                break;
+            case 2:
+                inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText());
+                break;
+            case 3:
+                inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText());
+                break;
+            case 4:
+                inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText());
+                break;
+            case 5:
+                inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText());
+                break;
         }
 
-        char[] inputChars = inputWord.toString().toCharArray();
-        boolean[] foundLetters = new boolean[targetWord.length];
-        boolean[] correctPosition = new boolean[targetWord.length];
-
-        // First pass: check for correct letters in the correct position
-        for (int i = 0; i < inputChars.length; i++) {
-            if (inputChars[i] == targetWord[i]) {
-                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct position
-                correctPosition[i] = true;
-                foundLetters[i] = true;
-            }
-        }
-
-        // Second pass: check for correct letters in the wrong position
-        for (int i = 0; i < inputChars.length; i++) {
-            if (!correctPosition[i]) { // Skip already correctly positioned letters
-                for (int j = 0; j < targetWord.length; j++) {
-                    if (inputChars[i] == targetWord[j] && !foundLetters[j]) {
-                        currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Present but wrong position
-                        foundLetters[j] = true;
-                        break;
+        String input = inputWord.toString();
+        for (int i = 0; i < input.length(); i++) {
+            char inputChar = input.charAt(i);
+            boolean isCorrect = false;
+            boolean isPresent = false;
+            for (int j = 0; j < targetWord.length; j++) {
+                if (inputChar == targetWord[j]) {
+                    isPresent = true;
+                    if (i == j) {
+                        isCorrect = true;
                     }
+                    break;
                 }
             }
-        }
+            if (isCorrect) {
+                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct letter in the correct position
 
-        // Third pass: mark letters not in the word
-        for (int i = 0; i < inputChars.length; i++) {
-            if (!correctPosition[i] && currentLabels.get(i).getStyle().isEmpty()) {
-                currentLabels.get(i).setStyle("-fx-background-color: gray"); // Not in the word
+            } else if (isPresent) {
+                currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Correct letter in the wrong position
             }
         }
     }
 
-    private List<Label> getCurrentRowLabels() {
+    private List<Label> getCurrentLabels() {
         List<Label> labels = new ArrayList<>();
         switch (currentRow) {
             case 1:
@@ -351,3 +350,4 @@ public class game1Controller implements Initializable {
         }
     }
 }
+
