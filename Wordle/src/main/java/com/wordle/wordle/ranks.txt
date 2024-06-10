@@ -1,8 +1,8 @@
-Username: nitddtg, Score: 280
-Username: bkyf, Score: 150
-Username: jefjefiji, Score: 150
-Username: bjht, Score: 120
-Username: wadawd, Score: 90
+Username: Filipe, Score: 280
+Username: Miguel, Score: 150
+Username: Rafael, Score: 150
+Username: Rodrigo, Score: 120
+Username: Joana, Score: 90
 
 
 
