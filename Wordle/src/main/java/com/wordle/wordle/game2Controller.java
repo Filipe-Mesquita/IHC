@@ -354,9 +354,9 @@ public class game2Controller implements Initializable {
                 }
             }
             if (isCorrect) {
-                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct letter in the correct position
+                currentLabels.get(i).setStyle("-fx-background-color: green;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the correct position
             } else if (isPresent) {
-                currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Correct letter in the wrong position
+                currentLabels.get(i).setStyle("-fx-background-color: yellow;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the wrong position
             }
         }
     }

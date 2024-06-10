@@ -343,11 +343,11 @@ System.out.println(lang);
             }
             if (isCorrect) {
                 System.out.println("Existe nessa noutra posição");
-                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct letter in the correct position
+                currentLabels.get(i).setStyle("-fx-background-color: green;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the correct position
 
             } else if (isPresent) {
                 System.out.println("Existe mas noutra posição");
-                currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Correct letter in the wrong position
+                currentLabels.get(i).setStyle("-fx-background-color: yellow;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the wrong position
             }else{
                 System.out.println("N existe");
             }

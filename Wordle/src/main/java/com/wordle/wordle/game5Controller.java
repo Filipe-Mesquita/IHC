@@ -53,11 +53,11 @@ public class game5Controller implements Initializable {
     private void initializeComponents() {
         String filePath = "";
         if (lang.equals("English")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         } else if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         } else if (lang.equals("French")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
         targetWord = findRandomLetterWord(filePath);
@@ -383,9 +383,9 @@ public class game5Controller implements Initializable {
                 }
             }
             if (isCorrect) {
-                currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct letter in the correct position
+                currentLabels.get(i).setStyle("-fx-background-color: green;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the correct position
             } else if (isPresent) {
-                currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Correct letter in the wrong position
+                currentLabels.get(i).setStyle("-fx-background-color: yellow;-fx-border-color: #e8e400; -fx-border-radius: 10px;-fx-background-radius:10px"); // Correct letter in the wrong position
             }
         }
     }
