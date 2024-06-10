@@ -35,11 +35,18 @@ public class game1Controller implements Initializable {
     private int currentColumn = 1;
     private char[] targetWord;
 
+    private String user;
+
     private int score;
 
     public void setLang(String lang) {
         this.lang = lang;
         initializeComponents();
+    }
+
+    public  void setUser(String user)
+    {
+        this.user = user;
     }
 
     @FXML
@@ -55,7 +62,7 @@ public class game1Controller implements Initializable {
             filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
         if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         }
         if (lang.equals("French")) {
             filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
@@ -174,6 +181,7 @@ public class game1Controller implements Initializable {
                         endController newController = loader.getController();
                         newController.setWord(new String(targetWord));
                         newController.setScore(score * 3);
+                        newController.setUser(user);
                         newController.setLabel();
 
 

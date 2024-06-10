@@ -33,11 +33,16 @@ public class game4Controller implements Initializable {
     private int currentRow = 1;
     private int currentColumn = 1;
     private char[] targetWord;
+    private String user;
     private int score;
 
     public void setLang(String lang) {
         this.lang = lang;
         initializeComponents();
+    }
+    public  void setUser(String user)
+    {
+        this.user = user;
     }
 
     @FXML
@@ -159,7 +164,8 @@ public class game4Controller implements Initializable {
 
                     endController newController = loader.getController();
                     newController.setWord(new String(targetWord));
-                    newController.setScore(score * 3);
+                    newController.setScore(score * 6);
+                    newController.setUser(user);
                     newController.setLabel();
 
 

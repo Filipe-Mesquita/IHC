@@ -46,9 +46,8 @@ public class HelloController implements Initializable {
     private int currentIndex2 = 0;
     private String username;
 
-    private Player[] ranks  = new Player[10];
+    public Player[] ranks  = new Player[10];
 
-    private Player newPLayer;
 
 
 
@@ -93,6 +92,8 @@ public class HelloController implements Initializable {
     private Label pos10user;
     @FXML
     private Label pos10score;
+
+
 
 
 
@@ -185,26 +186,31 @@ public class HelloController implements Initializable {
             {
                 game1Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
+                newController.setUser((username));
             }
             if(fxmlFile.equals("game2-view.fxml"))
             {
                 game2Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
+                newController.setUser((username));
             }
             if(fxmlFile.equals("game3-view.fxml"))
             {
                 game3Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
+                newController.setUser((username));
             }
             if(fxmlFile.equals("game4-view.fxml"))
             {
                 game4Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
+                newController.setUser((username));
             }
             if(fxmlFile.equals("game5-view.fxml"))
             {
                 game5Controller newController = loader.getController();
                 newController.setLang(values[currentIndex]);
+                newController.setUser((username));
             }
 
             Stage currentStage = (Stage) x.getScene().getWindow();
@@ -245,22 +251,6 @@ public class HelloController implements Initializable {
         if (username.length() >= 3) {
 
             System.out.println("vai entrar no for");
-            int  n;
-            for(n = 1; n < ranks.length; n ++)
-            {
-                if(ranks[n] == null)
-                {
-                    break;
-                }
-            }
-
-            ranks[n] = new Player(username);
-
-            System.out.println(ranks[n].getUsername());
-            saveRanks();
-
-
-            System.out.println(ranks[n].getUsername());
 
             if (currentIndex2 == 0) {
                 loadGameFXML(play, "game1-view.fxml");
@@ -354,7 +344,7 @@ public class HelloController implements Initializable {
 
 
 
-    private void saveRanks() {
+    public void saveRanks() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/ranks.txt"))) {
             for (Player player : ranks) {
                 if (player != null) {

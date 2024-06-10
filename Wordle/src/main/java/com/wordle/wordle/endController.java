@@ -23,7 +23,13 @@ public class endController implements Initializable {
     private Button menu;
     private String word;
     private int score;
+    private String user;
+    public Player jogador;
 
+    public  void setUser(String user)
+    {
+        this.user = user;
+    }
     public void setWord(String word)
     {
         this.word = word;
@@ -34,6 +40,10 @@ public class endController implements Initializable {
     {
         palavra.setText(word);
         num.setText(Integer.toString(score));
+
+        jogador = new Player(user);
+        jogador.setScore(score);
+
     }
 
 
@@ -42,6 +52,65 @@ public class endController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(HelloController.class.getResource(fxmlFile));
             Parent root = loader.load();
+
+            HelloController newController = loader.getController();
+
+            for(int i = 0; i < newController.ranks.length; i++)
+            {
+                if(newController.ranks[i] != null) {
+                    if (newController.ranks[i].getScore() < score) {
+
+                        /*int n = 0;
+                        for(int h = 0; h < newController.ranks.length; h++)
+                        {
+                            if(newController.ranks[h] != null) {
+                                n++;
+                            }else
+                            {
+                                break;
+                            }
+                        }
+
+                        do{
+                            newController.ranks[n] = newController.ranks[n - 1];
+                            n--;
+                        }while (n > i);
+
+                        newController.ranks[i] = jogador;*/
+
+                        // Array de tamanho 10
+                        int size = newController.ranks.length;
+
+                        // Encontrar a posição para inserir o novo elemento
+                        int position = 0;
+                        while (position < size && score < newController.ranks[position].getScore()) {
+                            position++;
+                        }
+
+                        // Se o novo elemento é menor que todos os elementos existentes, não é necessário inseri-lo
+                        if (position == size) {
+                            break;
+                        }
+
+                        // Deslocar elementos para a direita a partir da posição encontrada
+                        for (int j = size - 1; j > position; j--) {
+                            newController.ranks[j] = newController.ranks[j - 1];
+                        }
+
+                        // Inserir o novo elemento na posição correta
+                        newController.ranks[position] = jogador;
+                        break;
+                    }
+                }
+                else
+                {
+                    newController.ranks[i] = jogador;
+                    break;
+                }
+            }
+
+            newController.saveRanks();
+
             Stage stage = (Stage) x.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
