@@ -59,15 +59,15 @@ public class game1Controller implements Initializable {
 
         String filePath = "";
         if (lang.equals("English")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
         if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         }
         if (lang.equals("French")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
-
+System.out.println(lang);
         targetWord = findRandomLetterWord(filePath);
         if (targetWord != null && targetWord.length == 3) {
             StringBuilder wordBuilder = new StringBuilder();
@@ -349,10 +349,14 @@ public class game1Controller implements Initializable {
                 }
             }
             if (isCorrect) {
+                System.out.println("Existe nessa noutra posição");
                 currentLabels.get(i).setStyle("-fx-background-color: green"); // Correct letter in the correct position
 
             } else if (isPresent) {
+                System.out.println("Existe mas noutra posição");
                 currentLabels.get(i).setStyle("-fx-background-color: yellow"); // Correct letter in the wrong position
+            }else{
+                System.out.println("N existe");
             }
         }
     }
