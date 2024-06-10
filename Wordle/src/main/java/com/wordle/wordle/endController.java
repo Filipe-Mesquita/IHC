@@ -18,17 +18,22 @@ public class endController implements Initializable {
     @FXML
     private Label palavra;
     @FXML
+    private Label num;
+    @FXML
     private Button menu;
     private String word;
+    private int score;
 
     public void setWord(String word)
     {
         this.word = word;
     }
+    public void setScore(int socre){this.score = socre;}
 
     public void setLabel()
     {
         palavra.setText(word);
+        num.setText(Integer.toString(score));
     }
 
 

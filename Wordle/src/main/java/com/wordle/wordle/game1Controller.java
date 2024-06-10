@@ -35,6 +35,8 @@ public class game1Controller implements Initializable {
     private int currentColumn = 1;
     private char[] targetWord;
 
+    private int score;
+
     public void setLang(String lang) {
         this.lang = lang;
         initializeComponents();
@@ -50,13 +52,13 @@ public class game1Controller implements Initializable {
 
         String filePath = "";
         if (lang.equals("English")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
         if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordPT.txt").toAbsolutePath().toString();
         }
         if (lang.equals("French")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 
         targetWord = findRandomLetterWord(filePath);
@@ -161,13 +163,33 @@ public class game1Controller implements Initializable {
     private void handleEnterInput() {
         if (isRowFullyFilled()) {
             checkLettersInWord();
-            if (checkWord()) {
+            if (checkWord() || score == 0) {
                 wordLabel.setText("Correct! You won!");
+                System.out.println("Está certo!");
+
+                    try {
+                        FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("end-view.fxml"));
+                        Parent root = loader.load();
+
+                        endController newController = loader.getController();
+                        newController.setWord(new String(targetWord));
+                        newController.setScore(score * 3);
+                        newController.setLabel();
+
+
+                        Stage stage = (Stage) bENTER.getScene().getWindow();
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
             } else {
                 moveToNextRow();
             }
         }
     }
+
 
     private boolean isRowFullyFilled() {
         switch (currentRow) {
@@ -254,18 +276,30 @@ public class game1Controller implements Initializable {
         switch (currentRow) {
             case 1:
                 inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText());
+                score = 50;
                 break;
             case 2:
                 inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText());
+                score = 40;
                 break;
             case 3:
                 inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText());
+                score = 30;
                 break;
             case 4:
                 inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText());
+                score = 20;
                 break;
             case 5:
                 inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText());
+                if(inputWord.toString().equals(new String(targetWord)))
+                {
+                    score = 10;
+                }
+                else
+                {
+                    score = 0;
+                }
                 break;
         }
         return inputWord.toString().equals(new String(targetWord));

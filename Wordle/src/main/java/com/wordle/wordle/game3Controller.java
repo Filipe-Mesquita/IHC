@@ -33,6 +33,7 @@ public class game3Controller implements Initializable {
     private int currentRow = 1;
     private int currentColumn = 1;
     private char[] targetWord;
+    private  int score;
 
     public void setLang(String lang) {
         this.lang = lang;
@@ -148,8 +149,26 @@ public class game3Controller implements Initializable {
     private void handleEnterInput() {
         if (isRowFullyFilled()) {
             checkLettersInWord();
-            if (checkWord()) {
+            if (checkWord() || score == 0) {
                 wordLabel.setText("Correct! You won!");
+                System.out.println("Está certo!");
+
+                try {
+                    FXMLLoader loader = new FXMLLoader(HelloController.class.getResource("end-view.fxml"));
+                    Parent root = loader.load();
+
+                    endController newController = loader.getController();
+                    newController.setWord(new String(targetWord));
+                    newController.setScore(score * 3);
+                    newController.setLabel();
+
+
+                    Stage stage = (Stage) bENTER.getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             } else {
                 moveToNextRow();
             }
@@ -274,18 +293,30 @@ public class game3Controller implements Initializable {
         switch (currentRow) {
             case 1:
                 inputWord.append(l11.getText()).append(l12.getText()).append(l13.getText()).append(l14.getText()).append(l15.getText());
+                score = 50;
                 break;
             case 2:
                 inputWord.append(l21.getText()).append(l22.getText()).append(l23.getText()).append(l24.getText()).append(l25.getText());
+                score = 40;
                 break;
             case 3:
                 inputWord.append(l31.getText()).append(l32.getText()).append(l33.getText()).append(l34.getText()).append(l35.getText());
+                score = 30;
                 break;
             case 4:
                 inputWord.append(l41.getText()).append(l42.getText()).append(l43.getText()).append(l44.getText()).append(l45.getText());
+                score = 20;
                 break;
             case 5:
                 inputWord.append(l51.getText()).append(l52.getText()).append(l53.getText()).append(l54.getText()).append(l55.getText());
+                if(inputWord.toString().equals(new String(targetWord)))
+                {
+                    score = 10;
+                }
+                else
+                {
+                    score = 0;
+                }
                 break;
         }
         return inputWord.toString().equals(new String(targetWord));
