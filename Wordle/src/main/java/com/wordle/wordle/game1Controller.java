@@ -59,13 +59,13 @@ public class game1Controller implements Initializable {
 
         String filePath = "";
         if (lang.equals("English")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+            filePath = Paths.get("./Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
         if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("./Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         }
         if (lang.equals("French")) {
-            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+            filePath = Paths.get("./Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 System.out.println(lang);
         targetWord = findRandomLetterWord(filePath);
