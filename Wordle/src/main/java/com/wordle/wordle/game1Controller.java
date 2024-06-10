@@ -59,13 +59,13 @@ public class game1Controller implements Initializable {
 
         String filePath = "";
         if (lang.equals("English")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsEN.txt").toAbsolutePath().toString();
         }
         if (lang.equals("Portuguese")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsPT.txt").toAbsolutePath().toString();
         }
         if (lang.equals("French")) {
-            filePath = Paths.get("C:/Users/migue/Aulas-Ubi/IHC/TrabalhoFinal/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
+            filePath = Paths.get("C:/UBI/IHCtf/IHC/Wordle/src/main/java/com/wordle/wordle/wordsFR.txt").toAbsolutePath().toString();
         }
 System.out.println(lang);
         targetWord = findRandomLetterWord(filePath);
@@ -154,13 +154,13 @@ System.out.println(lang);
         if (currentLabel != null) {
             if (!currentLabel.getText().isEmpty()) {
                 currentLabel.setText("");
+                System.out.println(currentColumn);
             } else {
-                if (currentRow >= 1) {
-                    moveToPreviousLabel();
-                    currentLabel = getCurrentLabel();
-                    if (currentLabel != null) {
-                        currentLabel.setText("");
-                    }
+                moveToPreviousLabel();
+                currentLabel = getCurrentLabel();
+                if (currentLabel != null) {
+                    currentLabel.setText("");
+                    System.out.println(currentColumn);
                 }
             }
         }
@@ -260,16 +260,9 @@ System.out.println(lang);
     }
 
     private void moveToPreviousLabel() {
-        if(currentColumn != 1 && currentRow!=1){
-            if(currentColumn > 1) {
+        if (currentColumn > 1) {
             currentColumn--;
-            }
-            else {
-                currentRow--;
-                currentColumn=3;
-            }
         }
-
     }
 
     private void moveToNextRow() {
